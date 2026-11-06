@@ -158,11 +158,24 @@
         Contact us and let's discuss your ideas.
     </p>
 
-    <form id="contactForm">
+    <form
+        id="contactForm"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+    >
+
+        <input type="hidden" name="form-name" value="contact">
+
+        <div hidden>
+            <label>Leave this field empty: <input name="bot-field"></label>
+        </div>
 
         <input
             type="text"
             id="name"
+            name="name"
             placeholder="Your Name"
             required
         >
@@ -170,11 +183,12 @@
         <input
             type="email"
             id="email"
+            name="email"
             placeholder="Your Email"
             required
         >
 
-        <select id="service" required>
+        <select id="service" name="service" required>
             <option value="">Select a Service</option>
             <option value="Web Development">Web Development</option>
             <option value="Web Design">Web Design</option>
@@ -183,6 +197,7 @@
 
         <textarea
             id="message"
+            name="message"
             placeholder="Tell us about your project"
             rows="5"
             required

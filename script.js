@@ -9,20 +9,30 @@ contactForm.addEventListener("submit", function(event) {
 
     const name = document.getElementById("name").value.trim();
 
-    const email = document.getElementById("email").value.trim();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    formMessage.textContent = "Sending your message…";
 
-    const service = document.getElementById("service").value;
+    const body = new URLSearchParams(new FormData(contactForm)).toString();
 
-    const message = document.getElementById("message").value.trim();
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body
+    })
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Form submission failed");
+            }
 
-    if (!name || !email || !service || !message) {
-        formMessage.textContent = "Please complete all fields.";
-        return;
-    }
-
-    formMessage.textContent =
-        "Thank you, " + name + "! Your message is ready.";
-
-    contactForm.reset();
+            formMessage.textContent = "Thank you, " + name + "! Your message has been sent.";
+            contactForm.reset();
+        })
+        .catch(function() {
+            formMessage.textContent = "Sorry, your message could not be sent. Please try again.";
+        })
+        .finally(function() {
+            submitButton.disabled = false;
+        });
 
 });
