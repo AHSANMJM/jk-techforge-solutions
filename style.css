@@ -1,0 +1,395 @@
+
+/* General Settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111111;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation */
+
+header {
+    background: #080808;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #D4AF37;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #D4AF37;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 550px;
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: linear-gradient(
+        90deg,
+        #111111,
+        #1d1a10
+    );
+}
+
+.tagline {
+    color: #D4AF37;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    max-width: 750px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #D4AF37;
+}
+
+.hero > p:not(.tagline) {
+    color: #cccccc;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    background: #D4AF37;
+    color: #111111;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Common Sections */
+
+section:not(.hero) {
+    padding: 75px 8%;
+}
+
+section:not(.hero) h2 {
+    color: #D4AF37;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+/* Footer */
+
+footer {
+    background: #080808;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #333;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero > p:not(.tagline) {
+        font-size: 16px;
+    }
+
+    section:not(.hero) {
+        padding: 55px 6%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .tagline {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+
+
+/* About Section */
+
+.about {
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    color: #cccccc;
+    font-size: 17px;
+}
+
+/* Services Section */
+
+.services {
+    background: #181818;
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.service-card {
+    background: #222222;
+    border: 1px solid #444444;
+    padding: 35px 25px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: #D4AF37;
+    transform: translateY(-8px);
+}
+
+.service-card h3 {
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #cccccc;
+}
+
+/* Mobile Services */
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Projects Section */
+
+.projects {
+    text-align: center;
+    background: #111111;
+}
+
+.projects-intro {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.project-card {
+    background: #222222;
+    padding: 25px;
+    border: 1px solid #444444;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: #D4AF37;
+    transform: translateY(-6px);
+}
+
+.project-image {
+    height: 180px;
+    background: linear-gradient(135deg, #292010, #8b6b18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.project-image.second {
+    background: linear-gradient(135deg, #111111, #665018);
+}
+
+.project-card h3 {
+    color: #D4AF37;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    background: #D4AF37;
+    color: #111111;
+    padding: 11px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.project-btn:hover {
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Contact Section */
+
+.contact {
+    background: #181818;
+    text-align: center;
+}
+
+.contact-intro {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    background: #222222;
+    color: white;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+#contactForm input:focus,
+#contactForm select:focus,
+#contactForm textarea:focus {
+    outline: 2px solid #D4AF37;
+}
+
+#contactForm button {
+    background: #D4AF37;
+    color: #111111;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    background: white;
+}
+
+#formMessage {
+    color: #D4AF37;
+    font-weight: bold;
+}
