@@ -393,3 +393,72 @@ footer {
     color: #D4AF37;
     font-weight: bold;
 }
+
+
+/* Fiverr Call-to-Action Section */
+
+.fiverr-cta {
+    padding: 90px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #080808, #19150a);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.fiverr-cta h2 {
+    color: #ffffff;
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.fiverr-cta h2 span {
+    color: #d4af37;
+    display: block;
+}
+
+.fiverr-cta > p:not(.tagline):not(.fiverr-note) {
+    color: #cccccc;
+    font-size: 17px;
+    max-width: 650px;
+    margin: 15px auto 30px;
+    line-height: 1.7;
+}
+
+.fiverr-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #d4af37;
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.fiverr-btn:hover {
+    background: #f2d36b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.25);
+}
+
+.fiverr-note {
+    color: #999999;
+    font-size: 13px;
+    margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+    .fiverr-cta {
+        padding: 65px 18px;
+    }
+
+    .fiverr-cta h2 {
+        font-size: 28px;
+    }
+
+    .fiverr-btn {
+        font-size: 15px;
+        padding: 14px 24px;
+    }
+}
